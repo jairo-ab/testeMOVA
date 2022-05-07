@@ -50,16 +50,16 @@ export default {
 
     created() {
 
-    this.axios.get('https://restcountries.com/v3.1/all')
-    .then((response) => {
+    // this.axios.get('https://restcountries.com/v3.1/all')
+    // .then((response) => {
 
-      this.dadosAll = response.data;
-      // this.getFilterRegion()
-      console.log("response dadosAll ", this.dadosAll )
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    //   this.dadosAll = response.data;
+    //   // this.getFilterRegion()
+    //   console.log("response dadosAll ", this.dadosAll )
+    // })
+    // .catch((error) => {
+    //   console.log(error)
+    // })
 
   },
 

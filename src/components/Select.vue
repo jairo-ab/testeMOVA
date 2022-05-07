@@ -20,6 +20,8 @@
 </template>
 <script>
 
+import { mapActions, mapState } from 'vuex'
+
 export default {
 
   data() {
@@ -28,10 +30,20 @@ export default {
     }
   },
 
-  mounted(){
-  },
-  methods: {
+  computed: {
+		...mapState('alldata', ['data'])
+	},
+	
+	created(){
+		this.ActionAllData()
+	},
 
+	mounted(){
+		console.log(this.data)
+	},
+
+  methods: {
+		...mapActions('alldata', ['ActionAllData'])
   }
 
 };

@@ -5,6 +5,8 @@ import axios from "axios";
 import VueAxios from 'vue-axios'
 import VueMask from 'v-mask'
 import VueMaterial from 'vue-material'
+import Vuex from 'vuex'
+import modules from './modules'
 import 'vue-material/dist/vue-material.css'
 
 import routes from "./routes/routes";
@@ -30,16 +32,20 @@ Vue.prototype.$http = axios
 
 Vue.use(VueRouter);
 Vue.use(VueMask);
+Vue.use(Vuex)
 Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons)
 Vue.use(IconsPlugin);
 Vue.use(VueMaterial)
 
+const store = new Vuex.Store({ modules })
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
-  render: (h) => h(App),
+	render: (h) => h(App),
+	store,
   router,
   axios,
 });
